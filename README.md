@@ -5,7 +5,8 @@ This repository contains code and data to support the above journal article. The
 Please cite as:
 Tait C, Beecham R, Lovelace R, Barber S. 2022. Contraflows and cycling safety: Evidence from 22 years of data involving 508 one-way streets. XXXXXXXX
 
-### Abstract
+### Abstract  
+
 Contraflow cycling on one-way streets is a low cost intervention that research shows can
 improve the cycling experience and increase participation. Evidence from several studies
 suggest that cyclists on contraflows have a lower crash risk. However, implementing contraflow
@@ -31,34 +32,42 @@ rate for pedal cyclists. It is possible that such rates may indeed fall when con
 introduced if more accurate spatio-temporal cycling volume data was available. We recommend
 all one-way streets are evaluated for contraflow cycling but encourage judicious junction design and recommend UK legislative change for mandatory two-way cycling on one-way streets unless exceptional circumstances exist.
 
-## Datasets
-### 1) One-way streets that allow contraflow cycling in London
+### Datasets  
+
+#### 1) One-way streets that allow contraflow cycling in London
 We collected and collated this primary data from The Gazette. We have made this data available for other researchers to utilise.  
 ADD DATASET HERE
 
 
-### 2) Road traffic crash data
+#### 2) Road traffic crash data
 The UK Road traffic crash data used in this analysis can be obtained from the UK Department of Transport Road Safety Data page:
-https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data
+https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data  
 
-### 3) London cyclist volume cordon data
-The Transport for London (TfL) cycling volume cordon data can be obtained from the below data repository:
-https://cycling.data.tfl.gov.uk/  
 
-This data is part of the Cycle Counts Programme, specifically the Central London(area), Inner London(area) and Outer London(area) counts.    
+#### 3) London cyclist volume cordon data
+The Transport for London (TfL) cycling volume cordon data can be obtained from the TfL Travel in London Report datasets:  
 
-### 4) Other datasets utilised
+- Travel in London Report 14 data - Figure 5.8.  https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-report-14-data.xlsx  
+
+- Travel in London Report 12 data - Figure 6.5. https://tfl.gov.uk/cdn/static/cms/documents/travel-in-london-report-12-data.xlsx
+
+A version of this data is available in the data folder in this repo: [TFL cordon count cyclist data](data/TFL_Cordon_data_1976_2020.csv).   
+
+  
+
+#### 4) Other datasets utilised
 Open Geography UK data for the geography of London Boroughs can be obtained from the Office of National Statistics Open Geography Portal:
 https://geoportal.statistics.gov.uk/
 
 OpenStreetMap can be utilised for examining maps of the one-way streets and contraflows:
-https://www.openstreetmap.org
+https://www.openstreetmap.org  
 
 
-## Code
+
+### Code
 
 
-## Acknowledgements and Licenses
+### Acknowledgements and Licenses
 
 TfL data: Powered by TfLOpen Data.  Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights [2019].  
 
