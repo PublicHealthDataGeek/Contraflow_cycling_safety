@@ -34,7 +34,7 @@ all one-way streets are evaluated for contraflow cycling but encourage judicious
 
 ### Datasets  
 
-#### 1) One-way streets that allow contraflow cycling in London
+#### 1) One-way streets that allow contraflow cycling in Inner London
 We collected and collated this primary data from The Gazette. We have made this data available for other researchers to utilise.  
 ADD DATASET HERE
 
@@ -65,6 +65,14 @@ https://www.openstreetmap.org
 
 
 ### Code
+  
+We have added datasets to the data folder in this repository that are required to run this code. You may need to download your own version of the ONS geography London borough boundaries.
+
+Our code should be run in the following order:  
+
+- [0_get_stats19.R](code/0_get_stats19.R) - This code manipulates the Road Traffic Crash data used in the analysis. You will need to download your own version of the data from the link detailed above under datasets.  
+
+- [0_get_tfl_cycle_cordon_counts.R](code/0_get_tfl_cycle_cordon_counts.R) - This code takes the TFL cordon count dataset and manipulates it to manage missing values and then generates a index of change in cycling volume baselined to 1998 (first year of the study).
 
 
 ### Acknowledgements and Licenses

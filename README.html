@@ -407,8 +407,9 @@ circumstances exist.</p>
 </div>
 <div id="datasets" class="section level3">
 <h3>Datasets</h3>
-<div id="one-way-streets-that-allow-contraflow-cycling-in-london" class="section level4">
-<h4>1) One-way streets that allow contraflow cycling in London</h4>
+<div id="one-way-streets-that-allow-contraflow-cycling-in-inner-london" class="section level4">
+<h4>1) One-way streets that allow contraflow cycling in Inner
+London</h4>
 <p>We collected and collated this primary data from The Gazette. We have
 made this data available for other researchers to utilise.<br />
 ADD DATASET HERE</p>
@@ -441,6 +442,20 @@ streets and contraflows: <a href="https://www.openstreetmap.org" class="uri">htt
 </div>
 <div id="code" class="section level3">
 <h3>Code</h3>
+<p>We have added datasets to the data folder in this repository that are
+required to run this code. You may need to download your own version of
+the ONS geography London borough boundaries.</p>
+<p>Our code should be run in the following order:</p>
+<ul>
+<li><p><a href="code/0_get_stats19.R">0_get_stats19.R</a> - This code
+manipulates the Road Traffic Crash data used in the analysis. You will
+need to download your own version of the data from the link detailed
+above under datasets.</p></li>
+<li><p><a href="code/0_get_tfl_cycle_cordon_counts.R">0_get_tfl_cycle_cordon_counts.R</a>
+- This code takes the TFL cordon count dataset and manipulates it to
+manage missing values and then generates a index of change in cycling
+volume baselined to 1998 (first year of the study).</p></li>
+</ul>
 </div>
 <div id="acknowledgements-and-licenses" class="section level3">
 <h3>Acknowledgements and Licenses</h3>
