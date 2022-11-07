@@ -12,8 +12,7 @@
 #                                                                              #
 # Crash rates are expressed as raw/unadjusted and then adjusted for change in  #
 # cyclist volume                                                               #    
-#                                                                              #
-# It generates visualisations of these crash rates                             #
+#                                                                              #                           #
 ################################################################################
 
 # Load packages

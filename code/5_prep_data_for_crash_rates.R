@@ -7,7 +7,7 @@
 #   ie pre-contraflow, contraflow and post contraflow - required as denominator # 
 #   for rate calculation.                                                       #
 # - determining whether crashes occurred relative to TFL count cordons which is #
-#   required to adjust rates using the appropriate cyclist and traffic volumes  #
+#   required to adjust rates using the appropriate cyclist volumes              #
 #                                                                               #
 # Code was rerun using the AAP dataset (where SBC and self-reported crashes     #
 # were removed) so total dataset size is 1498 observations (rerun on 28/9/22)   #

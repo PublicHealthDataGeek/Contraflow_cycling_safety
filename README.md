@@ -74,6 +74,24 @@ Our code should be run in the following order:
 
 - [0_get_tfl_cycle_cordon_counts.R](code/0_get_tfl_cycle_cordon_counts.R) - This code takes the TFL cordon count dataset and manipulates it to manage missing values and then generates a index of change in cycling volume baselined to 1998 (first year of the study).
 
+- [1_join_stats19_to_contraflows_10m.R](code/1_join_stats19_to_contraflows_10m.R) - This code takes the UK Road traffic crash data ('STATS19') and identifies the crashes involving pedal cycles that occur within 10m of the one-way streets that allow contraflow cycling.  
+
+- [2_correct_durations_using_actual_start_date.R](code/2_correct_durations_using_actual_start_date.R) - This code corrects an error spotted in the calculation of duration of exposure to the various states (pre-contraflow, contraflow or contraflow removed) of the one-way streets.  
+
+- [3_analyse_contraflow_crashes_using_actual_start_date.R](code/3_analyse_contraflow_crashes_using_actual_start_date.R) - This code takes the crashes involving pedal cycles within 10m of a one-way street that allows contraflow cycling and identifies the vehicles and casualties involved. It removes crashes that are self-reported and single bicycle crashes before tidying the data and developing summary data.  
+
+- [4_withflow_or_contraflow.R](code/4_withflow_or_contraflow.R) - This code determines whether the pedal cycle(s) involved in the crashes is travelling with the motor vehicles flow, contraflow or in some other direction (e.g. turning).  
+
+- [5_prep_data_for_crash_rates.R](code/5_prep_data_for_crash_rates.R) - This code performs a number of actions that are required to subsequently calculate crash rates including bootstrapping the dataset, calculating time duration that road segments spent in different states, determining where crashes occurred relative to TFL cordon counters (required to adjust rates using cyclist volumes) and calculated number of crashes by various variables/states.   
+
+- [6_calculate_crash_rates.R](6_calculate_crash_rates.R) - This code calculates the following crash rates: Overall crash rate, crash rates within/not within 10m of a junction, crash by pedal cycle direction and crash rate by action (i.e. just contraflow cycling, one-way street and contraflow cycling or one-way street with contraflow bus lane and contraflow cycling). Each rate is calculated unadjusted and adjusted for change in cordon count cycling volume.    
+
+- [7_calculate_casualty_rates.R](7_calculate_casualty_rates.R) - This code gets the STATS19 casualty severity adjustment data for the years 2004-2019. This is because the classification of injury severity has changed during the study period and so our casualties need to be adjusted to take into account this change in reporting.  The severity adjustment probabilities are attached to the correct casualty and then the casualty dataframe is bootstrapped. This code then calculates the exposure for the casualties before calculating the following casualty rates: unadjusted; adjusted for severity; and adjusted for severity and change in cordon count cycling volume.  
+
+- []()  VIS
+
+
+
 
 ### Acknowledgements and Licenses
 

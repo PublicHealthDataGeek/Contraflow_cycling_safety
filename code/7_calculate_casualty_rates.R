@@ -1,11 +1,12 @@
 ################################################################################
 #                           Calculate casualty rates                           #
 #                                                                              #
-# This code gets the S19 casualty severity adjustment data for the years 2004- #
-# 2019.                                                                        #
+# This code gets the STATS19 casualty severity adjustment data for the years   #  
+# 2004 -2019.                                                                  #
 # As per https://www.gov.uk/government/publications/guide-to-severity-         #
 # adjustments-for-reported-road-casualty-statistics/guide-to-severity-         #
 # adjustments-for-reported-road-casualties-great-britain                       #
+#                                                                              #
 # The severity adjustment probabilities are attached to the correct casualty   #
 # and then the dataframe is bootstrapped.                                      # 
 #                                                                              #
@@ -18,8 +19,6 @@
 # reported crashes removed) Date rerun 29/09/2022.                             #
 ################################################################################
 
-
-
 # Load librarys
 library(tidyverse)
 library(rsample)
@@ -29,14 +28,14 @@ library(sf)
 
 
 
-# Pull out adjustment factors that match our crashes - would expect only cashes from Nov 2015 onwards would have one
-# then will need to ensure asign to correct casualty where >1 crash
-
 ################################################################################
 #  Create casualty bootstrap dataframe with correct adjustment probability for #
 #   the severity of their injury for years 2005-2019 (As per S19 guidance)     #
 ################################################################################
                             
+# Pull out adjustment factors that match our crashes - would expect only crashes 
+# from Nov 2015 onwards would have one then will need to ensure asign to correct 
+# casualty where >1 crash
 
 # Load datasets
 S19_adjust = read_delim(file = "/home/bananafan/Downloads/1979/cas_adjustment_lookup_2019.csv", 
