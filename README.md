@@ -70,11 +70,11 @@ We have added datasets to the data folder in this repository that are required t
 
 Our code should be run in the following order:  
 
-- [0_get_stats19.R](code/0_get_stats19.R) - This code manipulates the Road Traffic Crash data used in the analysis. You will need to download your own version of the data from the link detailed above under datasets.  
+- [0_get_stats19.R](code/0_get_stats19.R) - This code manipulates the UK Road Traffic Crash data (known as 'STATS19') used in the analysis. You will need to download your own version of the data from the link detailed above under datasets.  
 
 - [0_get_tfl_cycle_cordon_counts.R](code/0_get_tfl_cycle_cordon_counts.R) - This code takes the TFL cordon count dataset and manipulates it to manage missing values and then generates a index of change in cycling volume baselined to 1998 (first year of the study).
 
-- [1_join_stats19_to_contraflows_10m.R](code/1_join_stats19_to_contraflows_10m.R) - This code takes the UK Road traffic crash data ('STATS19') and identifies the crashes involving pedal cycles that occur within 10m of the one-way streets that allow contraflow cycling.  
+- [1_join_stats19_to_contraflows_10m.R](code/1_join_stats19_to_contraflows_10m.R) - This code takes the crash data and identifies the crashes involving pedal cycles that occur within 10m of the one-way streets that allow contraflow cycling.  
 
 - [2_correct_durations_using_actual_start_date.R](code/2_correct_durations_using_actual_start_date.R) - This code corrects an error spotted in the calculation of duration of exposure to the various states (pre-contraflow, contraflow or contraflow removed) of the one-way streets.  
 
