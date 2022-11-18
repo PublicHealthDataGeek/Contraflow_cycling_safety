@@ -3,7 +3,9 @@
 This repository contains code and data to support the above journal article. The paper is available... 
 
 Please cite as:
-Tait C, Beecham R, Lovelace R, Barber S. 2022. Contraflows and cycling safety: Evidence from 22 years of data involving 508 one-way streets. XXXXXXXX
+Tait, C., Beecham, R., Lovelace, R., Barber, S., 2023. Contraflows and cycling safety: Evidence from 22 years of data involving 508 one-way streets. Accident Analysis & Prevention 179, 106895. https://doi.org/10.1016/j.aap.2022.106895
+
+
 
 ### Abstract  
 
