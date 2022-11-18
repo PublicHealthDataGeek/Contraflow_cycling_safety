@@ -369,10 +369,11 @@ pre code {
 <h1>Contraflows and cycling safety: Evidence from 22 years of data
 involving 508 one-way streets</h1>
 <p>This repository contains code and data to support the above journal
-article. The paper is available…</p>
-<p>Please cite as: Tait C, Beecham R, Lovelace R, Barber S. 2022.
-Contraflows and cycling safety: Evidence from 22 years of data involving
-508 one-way streets. XXXXXXXX</p>
+article. The paper is available at: <a href="https://doi.org/10.1016/j.aap.2022.106895" class="uri">https://doi.org/10.1016/j.aap.2022.106895</a></p>
+<p>Please cite as:</p>
+<p>Tait, C., Beecham, R., Lovelace, R., Barber, S., 2023. Contraflows
+and cycling safety: Evidence from 22 years of data involving 508 one-way
+streets. Accident Analysis &amp; Prevention 179, 106895. <a href="https://doi.org/10.1016/j.aap.2022.106895" class="uri">https://doi.org/10.1016/j.aap.2022.106895</a></p>
 <div id="abstract" class="section level3">
 <h3>Abstract</h3>
 <p>Contraflow cycling on one-way streets is a low cost intervention that
@@ -448,14 +449,81 @@ the ONS geography London borough boundaries.</p>
 <p>Our code should be run in the following order:</p>
 <ul>
 <li><p><a href="code/0_get_stats19.R">0_get_stats19.R</a> - This code
-manipulates the Road Traffic Crash data used in the analysis. You will
-need to download your own version of the data from the link detailed
-above under datasets.</p></li>
+manipulates the UK Road Traffic Crash data (known as ‘STATS19’) used in
+the analysis. You will need to download your own version of the data
+from the link detailed above under datasets.</p></li>
 <li><p><a href="code/0_get_tfl_cycle_cordon_counts.R">0_get_tfl_cycle_cordon_counts.R</a>
 - This code takes the TFL cordon count dataset and manipulates it to
 manage missing values and then generates a index of change in cycling
 volume baselined to 1998 (first year of the study).</p></li>
+<li><p><a href="code/1_join_stats19_to_contraflows_10m.R">1_join_stats19_to_contraflows_10m.R</a>
+- This code takes the crash data and identifies the crashes involving
+pedal cycles that occur within 10m of the one-way streets that allow
+contraflow cycling.</p></li>
+<li><p><a href="code/2_correct_durations_using_actual_start_date.R">2_correct_durations_using_actual_start_date.R</a>
+- This code corrects an error spotted in the calculation of duration of
+exposure to the various states (pre-contraflow, contraflow or contraflow
+removed) of the one-way streets.</p></li>
+<li><p><a href="code/3_analyse_contraflow_crashes_using_actual_start_date.R">3_analyse_contraflow_crashes_using_actual_start_date.R</a>
+- This code takes the crashes involving pedal cycles within 10m of a
+one-way street that allows contraflow cycling and identifies the
+vehicles and casualties involved. It removes crashes that are
+self-reported and single bicycle crashes before tidying the data and
+developing summary data.</p></li>
+<li><p><a href="code/4_withflow_or_contraflow.R">4_withflow_or_contraflow.R</a> -
+This code determines whether the pedal cycle(s) involved in the crashes
+is travelling with the motor vehicles flow, contraflow or in some other
+direction (e.g. turning).</p></li>
+<li><p><a href="code/5_prep_data_for_crash_rates.R">5_prep_data_for_crash_rates.R</a>
+- This code performs a number of actions that are required to
+subsequently calculate crash rates including bootstrapping the dataset,
+calculating time duration that road segments spent in different states,
+determining where crashes occurred relative to TFL cordon counters
+(required to adjust rates using cyclist volumes) and calculated number
+of crashes by various variables/states.</p></li>
+<li><p><a href="6_calculate_crash_rates.R">6_calculate_crash_rates.R</a>
+- This code calculates the following crash rates: Overall crash rate,
+crash rates within/not within 10m of a junction, crash by pedal cycle
+direction and crash rate by action (i.e. just contraflow cycling,
+one-way street and contraflow cycling or one-way street with contraflow
+bus lane and contraflow cycling). Each rate is calculated unadjusted and
+adjusted for change in cordon count cycling volume.</p></li>
+<li><p><a href="7_calculate_casualty_rates.R">7_calculate_casualty_rates.R</a> -
+This code gets the STATS19 casualty severity adjustment data for the
+years 2004-2019. This is because the classification of injury severity
+has changed during the study period and so our casualties need to be
+adjusted to take into account this change in reporting. The severity
+adjustment probabilities are attached to the correct casualty and then
+the casualty dataframe is bootstrapped. This code then calculates the
+exposure for the casualties before calculating the following casualty
+rates: unadjusted; adjusted for severity; and adjusted for severity and
+change in cordon count cycling volume.</p></li>
 </ul>
+<p>We have also added code files that create two of the key the
+visualisations in the paper.</p>
+<div id="figure-2-dot-visualisation-of-all-crashes-involving-pedal-cycles-within-10-m-of-a-road-segment-by-unique-road-segment-vertical-position-date-of-crash-horizontal-position-crash-segment-status-colour-and-significant-change-to-road-segment-pane.-the-dashed-line-shows-when-the-traffic-sign-change-was-introduced.-colour-palette-sourced-from-wong-2011-to-promote-visual-accessibility." class="section level5">
+<h5>Figure 2: Dot visualisation of all crashes involving pedal cycles
+within 10 m of a road segment by: unique road segment (vertical
+position); date of crash (horizontal position); crash segment status
+(colour); and significant change to road segment (pane). The dashed line
+shows when the traffic sign change was introduced. Colour palette
+sourced from Wong (2011) to promote visual accessibility.</h5>
+<p><img src="figures/fig2.jpeg" /></p>
+<p><a href="visualising_all_crashes.R">visualising_all_crashes.R</a></p>
+</div>
+<div id="figure-4-crash-rates-involving-pedal-cyclists-per-100-years-of-exposure-by-crash-segment-status.-rates-are-presented-as-raw-and-adjusted-for-cordon-cycling-volume-1998-index-as-overall-by-proximity-to-junctions-or-roundabouts-within-10-m-by-significant-change-to-road-segments-and-by-pedal-cycle-direction.-visualisation-shows-point-estimates-for-rates-with-95-confidence-intervals-generated-by-bootstrapping.-n-represents-the-number-of-crashes-rounded-to-the-nearest-integer-for-adjusted-data." class="section level5">
+<h5>Figure 4: Crash rates involving pedal cyclists per 100 years of
+exposure by crash segment status. Rates are presented as raw and
+adjusted for cordon cycling volume (1998 index) as: overall; by
+proximity to junctions or roundabouts (within 10 m); by significant
+change to road segments; and by pedal cycle direction. Visualisation
+shows point estimates for rates with 95 % confidence intervals generated
+by bootstrapping. n represents the number of crashes, rounded to the
+nearest integer for adjusted data.</h5>
+<p><img src="figures/fig4.jpeg" /></p>
+<p><a href="visualising_crash_rates.R">visualising_crash_rates.R</a></p>
+<p>of all crashes and the crash</p>
+</div>
 </div>
 <div id="acknowledgements-and-licenses" class="section level3">
 <h3>Acknowledgements and Licenses</h3>
