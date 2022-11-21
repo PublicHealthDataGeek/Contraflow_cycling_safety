@@ -38,8 +38,9 @@ all one-way streets are evaluated for contraflow cycling but encourage judicious
 ### Datasets  
 
 #### 1) One-way streets that allow contraflow cycling in Inner London
-We collected and collated this primary data from The Gazette. We have made this data available for other researchers to utilise.  
-ADD DATASET HERE
+We collected and collated this primary data from The Gazette. We have made this data available for other researchers to utilise in a csv file. Each road segment may be represented more than once in this dataset , for example, if it is spatially represented by two different OpenStreetMap segments.  
+
+[Dataset of contraflow TROs in inner London 1998-2019 ](data/inner_london_contraflow_tro_1998_2019.csv)  
 
 
 #### 2) Road traffic crash data
