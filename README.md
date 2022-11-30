@@ -1,19 +1,12 @@
----
-title: "Contraflows and cycling safety: Evidence from 22 years of data involving 508 one-way streets"
-author: "C Tait"
-date: "December 2022"
-output: github_document
----
+Contraflows and cycling safety: Evidence from 22 years of data involving
+508 one-way streets
+================
+C Tait
+December 2022
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-
-This webpage contains code and data to support the article about contraflow cycling safety. The paper is available at:
+This webpage contains code and data to support the article about
+contraflow cycling safety. The paper is available at:
 <https://doi.org/10.1016/j.aap.2022.106895>
-
-
 
 ### High level summary
 
@@ -52,30 +45,12 @@ circumstances exist.
 
 ### Interactive map of the streets and the crashes - coming soon
 
-```{r, echo = FALSE, warnings = FALSE, message=FALSE}
-library(sf)
-library(tidyverse)
-library(mapview)
-unique_tro_df = readRDS(file = "data/unique_tro_df_durations_using_start_date.Rds")
-# Load dataframe of pedal cycle crashes joined to casualties and vehicles
-# crashes_casualties_vehicles = readRDS(file="data/pedal_cycle_crashes_with_casualties_&_vehicles_&_junctions&cycle_direction&infra_28_09_22.RDs")
-# Add column that has the additional actions of the TRO
-# crashes_casualties_vehicles = crashes_casualties_vehicles %>%
-#   mutate(sig_additional_tro_action = case_when(introduces_one_way_street == TRUE ~ "One-way street and contraflow cycling", 
-#                                                introduces_contraflow_bus_lane == TRUE ~ "Contraflow bus lane and contraflow cycling",
-#                                                TRUE ~ "Contraflow cycling only"))
-
-
-```
-  
-  
 #### Citation:
 
 Tait, C., Beecham, R., Lovelace, R., Barber, S., 2023. Contraflows and
 cycling safety: Evidence from 22 years of data involving 508 one-way
 streets. Accident Analysis & Prevention 179, 106895.
 <https://doi.org/10.1016/j.aap.2022.106895>
-
 
 ### Datasets
 
@@ -128,7 +103,7 @@ the ONS geography London borough boundaries.
 Our code should be run in the following order:
 
 -   [0_get_stats19.R](code/0_get_stats19.R) - This code manipulates the
-    UK Road Traffic Crash data (known as 'STATS19') used in the
+    UK Road Traffic Crash data (known as ‘STATS19’) used in the
     analysis. You will need to download your own version of the data
     from the link detailed above under datasets.
 
@@ -157,7 +132,7 @@ Our code should be run in the following order:
 -   [4_withflow_or_contraflow.R](code/4_withflow_or_contraflow.R) - This
     code determines whether the pedal cycle(s) involved in the crashes
     is travelling with the motor vehicles flow, contraflow or in some
-    other direction (e.g. turning).
+    other direction (e.g. turning).
 
 -   [5_prep_data_for_crash_rates.R](code/5_prep_data_for_crash_rates.R) -
     This code performs a number of actions that are required to
@@ -170,7 +145,7 @@ Our code should be run in the following order:
 -   [6_calculate_crash_rates.R](code/6_calculate_crash_rates.R) - This
     code calculates the following crash rates: Overall crash rate, crash
     rates within/not within 10m of a junction, crash by pedal cycle
-    direction and crash rate by action (i.e. just contraflow cycling,
+    direction and crash rate by action (i.e. just contraflow cycling,
     one-way street and contraflow cycling or one-way street with
     contraflow bus lane and contraflow cycling). Each rate is calculated
     unadjusted and adjusted for change in cordon count cycling volume.
@@ -207,7 +182,7 @@ visualisations in the paper.
 
 TfL data: Powered by TfLOpen Data. Contains OS data © Crown copyright
 and database rights 2016 and Geomni UK Map data © and database rights
-[2019].
+\[2019\].
 
 The Gazette, Office of National Statistics and UK Road Traffic crash
 data: Licensed under the Open Government Licence v3.0.
@@ -219,4 +194,3 @@ and database right 2010-19. <https://www.openstreetmap.org/copyright>
 
 ONS data: Contains public sector information licensed under the Open
 Government Licence v3.0.
-
