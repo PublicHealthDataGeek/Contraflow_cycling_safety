@@ -2,11 +2,7 @@
 title: "Contraflows and cycling safety: Evidence from 22 years of data involving 508 one-way streets"
 author: "C Tait"
 date: "December 2022"
-output:
-  rmarkdown::html_document:
-    toc: yes
-    toc_float: yes
-    theme: united
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -53,24 +49,11 @@ judicious junction design and recommend UK legislative change for
 mandatory two-way cycling on one-way streets unless exceptional
 circumstances exist.
 
-### Interactive map of the streets and the crashes  
+### Map of the streets and the crashes  
   
-The below map shows in red the 508 road segments that allowed contraflow cycling between 1998 and 2019. If you hover over the segment and click then a popup table will appear that allows you to see the underlying data about that road segment. The crashes involving pedal cycles are represented by circles that a coloured by whether they occurred before or during contraflow cycling implementation, or following contraflow removal. Again, if you hover over a crash and click you can see the details of that crash.        
+The below map shows in red the 508 road segments that allowed contraflow cycling between 1998 and 2019. The crashes involving pedal cycles are represented by circles that a coloured by whether they occurred before or during contraflow cycling implementation, or following contraflow removal. 
 
-
-```{r, echo = FALSE, warnings = FALSE, message=FALSE}
-library(tidyverse)
-library(sf)
-library(mapview)
-segments = readRDS(file = "data/unique_tro_df_durations_using_start_date.Rds") %>%
-  select(-c(19))
-# Load dataframe of pedal cycle crashes joined to casualties and vehicles
-pedal_cycle_crashes = readRDS(file="data/pedal_cycle_crashes_with_casualties_&_vehicles_&_junctions&cycle_direction&infra_28_09_22.RDs") %>%
-  select(c(1:28, 30, 40, 44,46, 48:53, 102:105))
-mapview(segments, color = "red", layer.name = "Road segments") + mapview(pedal_cycle_crashes, zcol = "crash_time_scale", layer.name = c("Crash time scale"), alpha = 0.3, cex = 3)
-
-```
-
+![](figures/map.png)
   
 #### Citation:
 

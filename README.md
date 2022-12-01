@@ -43,25 +43,15 @@ judicious junction design and recommend UK legislative change for
 mandatory two-way cycling on one-way streets unless exceptional
 circumstances exist.
 
-### Interactive map of the streets and the crashes
+### Map of the streets and the crashes
 
 The below map shows in red the 508 road segments that allowed contraflow
-cycling between 1998 and 2019. If you hover over the segment and click
-then a popup table will appear that allows you to see the underlying
-data about that road segment. The crashes involving pedal cycles are
+cycling between 1998 and 2019. The crashes involving pedal cycles are
 represented by circles that a coloured by whether they occurred before
 or during contraflow cycling implementation, or following contraflow
-removal. Again, if you hover over a crash and click you can see the
-details of that crash.
+removal.
 
-``` r
-library(mapview)
-mapview(breweries)
-```
-
-![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
-
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](figures/map.png)
 
 #### Citation:
 
