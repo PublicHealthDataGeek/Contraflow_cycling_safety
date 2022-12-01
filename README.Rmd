@@ -64,6 +64,8 @@ mapview(breweries)
 
 
 
+
+
 ```{r, echo = FALSE, warnings = FALSE, message=FALSE}
 library(tidyverse)
 library(sf)
@@ -77,6 +79,14 @@ mapview(segments, color = "red", layer.name = "Road segments") + mapview(pedal_c
 
 ```
 
+```{r}
+library(tmap)
+data("World")
+tmap_mode("view")
+
+tm_shape(World) +
+    tm_polygons("HPI")
+```
 
   
   
