@@ -2,13 +2,16 @@
 title: "Contraflows and cycling safety: Evidence from 22 years of data involving 508 one-way streets"
 author: "C Tait"
 date: "December 2022"
-output: github_document
+output:
+  rmarkdown::html_document:
+    toc: yes
+    toc_float: yes
+    theme: united
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.width = 8.83, message = FALSE)
 ```
-
 
 This webpage contains code and data to support the article about contraflow cycling safety. The paper is available at:
 <https://doi.org/10.1016/j.aap.2022.106895>
@@ -53,6 +56,13 @@ circumstances exist.
 ### Interactive map of the streets and the crashes  
   
 The below map shows in red the 508 road segments that allowed contraflow cycling between 1998 and 2019. If you hover over the segment and click then a popup table will appear that allows you to see the underlying data about that road segment. The crashes involving pedal cycles are represented by circles that a coloured by whether they occurred before or during contraflow cycling implementation, or following contraflow removal. Again, if you hover over a crash and click you can see the details of that crash.        
+
+```{r}
+library(mapview)
+mapview(breweries)
+```
+
+
 
 ```{r, echo = FALSE, warnings = FALSE, message=FALSE}
 library(tidyverse)

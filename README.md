@@ -54,7 +54,14 @@ or during contraflow cycling implementation, or following contraflow
 removal. Again, if you hover over a crash and click you can see the
 details of that crash.
 
+``` r
+library(mapview)
+mapview(breweries)
+```
+
 ![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 #### Citation:
 
